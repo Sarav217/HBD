@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Jeevan Sai 🚀</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Animated background glow */
+body::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #38bdf8;
+    filter: blur(120px);
+    opacity: 0.15;
+    animation: pulse 6s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.3); }
+}
+
+/* Card */
+.card {
+    position: relative;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 45px;
+    width: 540px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(56,189,248,0.2);
+    z-index: 2;
+}
+
+/* Neon headings */
+h1 {
+    font-size: 2.4rem;
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #22c55e;
+    text-shadow: 0 0 15px rgba(34,197,94,0.6);
+}
+
+p {
+    margin-top: 20px;
+    color: #cbd5f5;
+    line-height: 1.6;
+}
+
+/* Typing text */
+.typing {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #facc15;
+    min-height: 30px;
+}
+
+/* Buttons */
+.btn {
+    margin-top: 25px;
+    background: linear-gradient(45deg, #38bdf8, #22c55e);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+/* Scan line effect */
+.scan {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: rgba(56,189,248,0.6);
+    top: 0;
+    left: 0;
+    animation: scanAnim 3s infinite;
+}
+
+@keyframes scanAnim {
+    from { top: 0; }
+    to { top: 100%; }
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="scan"></div>
+
+    <h1>🎉 SYSTEM EVENT 🎉</h1>
+    <h2>Birthday Detected 🚀</h2>
+
+    <p>
+        User Identified:<br>
+        <strong>Jeevan Sai 💻</strong><br>
+        Computer Science Engineer ⚡
+    </p>
+
+    <div class="typing" id="typing"></div>
+
+    <button class="btn" onclick="upgrade()">Upgrade Year ⬆️</button>
+    <button class="btn" onclick="celebrate()">Launch Celebration 🎉</button>
+
+    <p id="message" style="margin-top:20px;"></p>
+</div>
+
+<script>
+const text = "Initializing Birthday Protocol... 🎂✨";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 50);
+    }
+}
+typeEffect();
+
+function upgrade() {
+    document.getElementById("message").innerHTML =
+        "✅ Upgrade Successful: Jeevan Sai vNext Activated 🚀";
+    confettiBlast();
+}
+
+function celebrate() {
+    document.getElementById("message").innerHTML =
+        "🎉 Celebration Mode Enabled. Happiness Overflowing!";
+    confettiBlast();
+}
+
+function confettiBlast() {
+    for (let i = 0; i < 80; i++) {
+        let c = document.createElement("div");
+        c.classList.add("confetti");
+
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.background =
+            ["#38bdf8", "#22c55e", "#facc15", "#f472b6"][Math.floor(Math.random()*4)];
+        c.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 5000);
+    }
+}
+</script>
+
+</body>
+</html>
