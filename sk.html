@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Siva Sankar! 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0d3d2e;
+    --green-mid: #1a6645;
+    --green-bright: #27ae60;
+    --green-light: #52d68a;
+    --green-pale: #a8f0c6;
+    --gold: #f0c040;
+    --cream: #fdf8ef;
+    --white: #ffffff;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: var(--green-deep);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── PARTICLE CANVAS ── */
+  #particles {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ── SLIDER WRAPPER ── */
+  .slider {
+    display: flex;
+    width: 100vw; height: 100vh;
+    transition: transform 0.85s cubic-bezier(0.77,0,0.18,1);
+    will-change: transform;
+    position: relative; z-index: 1;
+  }
+
+  /* ── EACH SLIDE ── */
+  .slide {
+    min-width: 100vw; height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 2rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  /* slide backgrounds */
+  .slide-1 { background: radial-gradient(ellipse at 50% 60%, #1a6645 0%, #0b3325 60%, #061a12 100%); }
+  .slide-2 { background: radial-gradient(ellipse at 30% 40%, #0d3d2e 0%, #133d26 50%, #0a2a1c 100%); }
+  .slide-3 { background: radial-gradient(ellipse at 70% 50%, #1b5e3a 0%, #0d3d2e 60%, #071e12 100%); }
+  .slide-4 { background: radial-gradient(ellipse at 50% 30%, #0f4a30 0%, #0b3325 60%, #061a12 100%); }
+  .slide-5 { background: radial-gradient(ellipse at 40% 60%, #16573b 0%, #0d3d2e 55%, #071e12 100%); }
+  .slide-6 { background: radial-gradient(ellipse at 60% 50%, #0d3d2e 0%, #1a6645 50%, #0b3325 100%); }
+
+  /* decorative ring behind content */
+  .slide::before {
+    content: '';
+    position: absolute;
+    width: min(70vw, 500px); height: min(70vw, 500px);
+    border-radius: 50%;
+    border: 1px solid rgba(82,214,138,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulseRing 4s ease-in-out infinite;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    width: min(85vw, 620px); height: min(85vw, 620px);
+    border-radius: 50%;
+    border: 1px solid rgba(82,214,138,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulseRing 4s ease-in-out infinite 1s;
+  }
+  @keyframes pulseRing {
+    0%,100% { opacity:0.4; transform:translate(-50%,-50%) scale(1); }
+    50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.05); }
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 9vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .hero-name span { color: var(--green-light); }
+  .hero-sub {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.4rem, 5vw, 3rem);
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+  }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .slide-title .accent { color: var(--green-light); }
+  .slide-body {
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+  .italic { font-style: italic; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-light), transparent);
+    margin: 1.2rem auto;
+  }
+
+  /* ── CARDS ── */
+  .cards {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: center; margin-top: 1.4rem;
+    max-width: 640px; position: relative; z-index: 2;
+  }
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(82,214,138,0.2);
+    border-radius: 16px;
+    padding: 1rem 1.3rem;
+    flex: 1 1 140px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s, background 0.3s;
+  }
+  .card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
+  .card-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+  .card-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green-pale);
+    margin-bottom: 0.2rem;
+  }
+  .card-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* ── WISH BUBBLE ── */
+  .wish-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(82,214,138,0.25);
+    border-radius: 24px;
+    padding: clamp(1.2rem,4vw,2rem) clamp(1.4rem,5vw,2.5rem);
+    max-width: 560px;
+    backdrop-filter: blur(8px);
+    position: relative; z-index: 2;
+    margin-top: 1rem;
+  }
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--green-light);
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+  }
+
+  /* ── AGE BADGE ── */
+  .age-badge {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 18vw, 11rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--green-light);
+    line-height: 1;
+    margin: 0.2rem 0;
+    text-shadow: 0 0 60px rgba(82,214,138,0.3);
+  }
+
+  /* ── EMOJIS FLOAT ── */
+  .floaters {
+    position: absolute; inset: 0;
+    pointer-events: none; overflow: hidden;
+    z-index: 0;
+  }
+  .floater {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0%   { opacity:0; transform: translateY(100%) rotate(0deg); }
+    10%  { opacity:0.7; }
+    90%  { opacity:0.7; }
+    100% { opacity:0; transform: translateY(-110vh) rotate(360deg); }
+  }
+
+  /* ── NAVIGATION DOTS ── */
+  .dots {
+    position: fixed;
+    right: clamp(12px, 3vw, 24px);
+    top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 10px;
+    z-index: 100;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(82,214,138,0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(82,214,138,0.5);
+  }
+  .dot.active {
+    background: var(--green-light);
+    transform: scale(1.5);
+    box-shadow: 0 0 8px rgba(82,214,138,0.6);
+  }
+
+  /* ── ARROW BUTTONS ── */
+  .arrow {
+    position: fixed;
+    bottom: clamp(20px, 4vh, 36px);
+    z-index: 100;
+    background: rgba(82,214,138,0.12);
+    border: 1px solid rgba(82,214,138,0.35);
+    color: var(--green-light);
+    border-radius: 50%;
+    width: clamp(42px, 8vw, 56px); height: clamp(42px, 8vw, 56px);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(6px);
+  }
+  .arrow:hover { background: rgba(82,214,138,0.3); transform: scale(1.1); }
+  .arrow.prev { left: 50%; transform: translateX(-70px); }
+  .arrow.next { left: 50%; transform: translateX(14px); }
+  .arrow.prev:hover { transform: translateX(-70px) scale(1.1); }
+  .arrow.next:hover { transform: translateX(14px) scale(1.1); }
+  .arrow:disabled { opacity: 0.2; pointer-events: none; }
+
+  /* ── SLIDE-IN ANIMATION ── */
+  .slide-content { position: relative; z-index: 2; }
+  .slide.active .animate-in {
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .slide.active .animate-in:nth-child(1) { animation-delay: 0.1s; }
+  .slide.active .animate-in:nth-child(2) { animation-delay: 0.2s; }
+  .slide.active .animate-in:nth-child(3) { animation-delay: 0.3s; }
+  .slide.active .animate-in:nth-child(4) { animation-delay: 0.4s; }
+  .slide.active .animate-in:nth-child(5) { animation-delay: 0.5s; }
+  .slide.active .animate-in:nth-child(6) { animation-delay: 0.6s; }
+  .animate-in { opacity: 0; transform: translateY(30px); }
+  @keyframes fadeUp {
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── CONFETTI strip on top ── */
+  .confetti-bar {
+    position: fixed; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--green-bright), var(--gold), var(--green-light), var(--gold), var(--green-bright));
+    background-size: 200% 100%;
+    animation: barMove 3s linear infinite;
+    z-index: 200;
+  }
+  @keyframes barMove { to { background-position: 200% 0; } }
+
+  /* ── CAKE ANIMATION slide 1 ── */
+  .cake-wrap { font-size: clamp(3.5rem, 10vw, 6rem); animation: bounce 2s ease-in-out infinite; }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  /* responsive tweaks */
+  @media (max-width: 480px) {
+    .cards { gap: 0.7rem; }
+    .card { flex: 1 1 120px; padding: 0.8rem 1rem; }
+    .wish-box { padding: 1rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="confetti-bar"></div>
+
+<!-- DOTS -->
+<nav class="dots" id="dots"></nav>
+
+<!-- ARROWS -->
+<button class="arrow prev" id="prevBtn" onclick="changeSlide(-1)">&#8592;</button>
+<button class="arrow next" id="nextBtn" onclick="changeSlide(1)">&#8594;</button>
+
+<!-- ═══════════════ SLIDER ═══════════════ -->
+<div class="slider" id="slider">
+
+  <!-- SLIDE 1 – OPENING -->
+  <div class="slide slide-1 active">
+    <div class="floaters" id="f1"></div>
+    <div class="slide-content">
+      <div class="cake-wrap animate-in">🎂</div>
+      <p class="tag animate-in">5th April 2008 · A Star is Born</p>
+      <h1 class="hero-name animate-in">Siva<br><span>Sankar</span></h1>
+      <p class="hero-sub animate-in">Happy Birthday! 🎉</p>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in">Today we celebrate the one and only <strong style="color:var(--green-light)">Siva Sankar</strong> — turning 18 and stepping into greatness!</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 – WHO HE IS -->
+  <div class="slide slide-2">
+    <div class="floaters" id="f2"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">The Man of the Day</p>
+      <h2 class="slide-title animate-in">Meet the <span class="accent">Legend</span></h2>
+      <div class="divider animate-in"></div>
+      <div class="cards animate-in">
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <div class="card-label">College</div>
+          <div class="card-value">SSNCOE</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-label">Branch</div>
+          <div class="card-value">B.E Mechanical</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🟢</div>
+          <div class="card-label">Fav Colour</div>
+          <div class="card-value">Green 💚</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎂</div>
+          <div class="card-label">Birthday</div>
+          <div class="card-value">5 April 2008</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 – AGE -->
+  <div class="slide slide-3">
+    <div class="floaters" id="f3"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Officially</p>
+      <div class="age-badge animate-in">18</div>
+      <h2 class="slide-title animate-in">Years of <span class="accent">Awesome</span></h2>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in">18 years of laughter, learning, and legends. The world wasn't ready — but here you are, and it's better for it. 🌿</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 – WISH -->
+  <div class="slide slide-4">
+    <div class="floaters" id="f4"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">From the Heart</p>
+      <h2 class="slide-title animate-in">Birthday <span class="accent">Wishes</span></h2>
+      <div class="wish-box animate-in">
+        <span class="quote-mark">"</span>
+        <p class="slide-body italic">Dear Siva Sankar, may this birthday mark the beginning of your most exciting chapter yet. May every gear you turn in Mechanical Engineering open doors of brilliance, every day bring you joy as vibrant as green, and may life always move in your favour. Wishing you a year full of success, good vibes, and unforgettable moments! 🌱✨</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 – QUALITIES -->
+  <div class="slide slide-5">
+    <div class="floaters" id="f5"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Why You're Special</p>
+      <h2 class="slide-title animate-in">Things We <span class="accent">Love</span> About You</h2>
+      <div class="divider animate-in"></div>
+      <div class="cards animate-in">
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <div class="card-value">Sharp Mind</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">😂</div>
+          <div class="card-value">Great Humor</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <div class="card-value">Loyal Friend</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💪</div>
+          <div class="card-value">Never Gives Up</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌿</div>
+          <div class="card-value">Green Energy</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-value">Future Engineer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 – FINAL -->
+  <div class="slide slide-6">
+    <div class="floaters" id="f6"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Always & Forever</p>
+      <h2 class="slide-title animate-in">Keep <span class="accent">Shining</span><br>Siva Sankar!</h2>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in" style="margin-bottom:1.5rem">The road ahead is long and full of wonders. Chase every dream, embrace every challenge, and never stop being you. 🚀</p>
+      <div class="wish-box animate-in" style="padding:1rem 1.5rem">
+        <p style="font-family:'Dancing Script',cursive;font-size:clamp(1.5rem,5vw,2.2rem);color:var(--gold)">Happy 18th Birthday! 🎉🥳🎂</p>
+        <p style="color:var(--green-pale);font-size:0.9rem;margin-top:0.4rem">With love, from your friends 💚</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end slider -->
+
+<script>
+/* ── STATE ── */
+let current = 0;
+const total = 6;
+const slider = document.getElementById('slider');
+const dotsNav = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const slides = document.querySelectorAll('.slide');
+
+/* ── DOTS ── */
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsNav.appendChild(d);
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === current));
+}
+
+function updateArrows() {
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === total - 1;
+}
+
+function resetAnimations(index) {
+  const els = slides[index].querySelectorAll('.animate-in');
+  els.forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+
+function goTo(index) {
+  slides[current].classList.remove('active');
+  current = index;
+  slider.style.transform = `translateX(-${current * 100}vw)`;
+  slides[current].classList.add('active');
+  resetAnimations(current);
+  updateDots();
+  updateArrows();
+}
+
+function changeSlide(dir) {
+  const next = current + dir;
+  if (next >= 0 && next < total) goTo(next);
+}
+
+updateArrows();
+
+/* ── TOUCH/SWIPE ── */
+let startX = 0;
+slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+slider.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - startX;
+  if (Math.abs(dx) > 50) changeSlide(dx < 0 ? 1 : -1);
+}, {passive:true});
+
+/* ── KEYBOARD ── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+});
+
+/* ── PARTICLES canvas ── */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.8 + 0.4;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.alpha = Math.random() * 0.5 + 0.1;
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(82,214,138,${this.alpha})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ── FLOATERS (emojis) ── */
+const sets = [
+  ['🎂','🎉','🎊','✨','💚','🌿'],
+  ['⚙️','🔧','💡','🎓','💚','✨'],
+  ['🎁','🥳','🎉','🌟','💚','🌱'],
+  ['💐','🥂','🎊','✨','🌿','💚'],
+  ['💪','🌟','🚀','💚','✨','🎉'],
+  ['🎂','🥳','💚','✨','🎉','🌿'],
+];
+
+sets.forEach((emojis, idx) => {
+  const container = document.getElementById('f'+(idx+1));
+  for (let i = 0; i < 10; i++) {
+    const el = document.createElement('span');
+    el.className = 'floater';
+    el.textContent = emojis[i % emojis.length];
+    el.style.left = (Math.random()*90+5) + '%';
+    el.style.animationDuration = (Math.random()*8+6) + 's';
+    el.style.animationDelay = (Math.random()*8) + 's';
+    el.style.fontSize = (Math.random()*1.2+0.9) + 'rem';
+    container.appendChild(el);
+  }
+});
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Siva Sankar! 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0d3d2e;
+    --green-mid: #1a6645;
+    --green-bright: #27ae60;
+    --green-light: #52d68a;
+    --green-pale: #a8f0c6;
+    --gold: #f0c040;
+    --cream: #fdf8ef;
+    --white: #ffffff;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: var(--green-deep);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── PARTICLE CANVAS ── */
+  #particles {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ── SLIDER WRAPPER ── */
+  .slider {
+    display: flex;
+    width: 100vw; height: 100vh;
+    transition: transform 0.85s cubic-bezier(0.77,0,0.18,1);
+    will-change: transform;
+    position: relative; z-index: 1;
+  }
+
+  /* ── EACH SLIDE ── */
+  .slide {
+    min-width: 100vw; height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 2rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  /* slide backgrounds */
+  .slide-1 { background: radial-gradient(ellipse at 50% 60%, #1a6645 0%, #0b3325 60%, #061a12 100%); }
+  .slide-2 { background: radial-gradient(ellipse at 30% 40%, #0d3d2e 0%, #133d26 50%, #0a2a1c 100%); }
+  .slide-3 { background: radial-gradient(ellipse at 70% 50%, #1b5e3a 0%, #0d3d2e 60%, #071e12 100%); }
+  .slide-4 { background: radial-gradient(ellipse at 50% 30%, #0f4a30 0%, #0b3325 60%, #061a12 100%); }
+  .slide-5 { background: radial-gradient(ellipse at 40% 60%, #16573b 0%, #0d3d2e 55%, #071e12 100%); }
+  .slide-6 { background: radial-gradient(ellipse at 60% 50%, #0d3d2e 0%, #1a6645 50%, #0b3325 100%); }
+
+  /* decorative ring behind content */
+  .slide::before {
+    content: '';
+    position: absolute;
+    width: min(70vw, 500px); height: min(70vw, 500px);
+    border-radius: 50%;
+    border: 1px solid rgba(82,214,138,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulseRing 4s ease-in-out infinite;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    width: min(85vw, 620px); height: min(85vw, 620px);
+    border-radius: 50%;
+    border: 1px solid rgba(82,214,138,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulseRing 4s ease-in-out infinite 1s;
+  }
+  @keyframes pulseRing {
+    0%,100% { opacity:0.4; transform:translate(-50%,-50%) scale(1); }
+    50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.05); }
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 9vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .hero-name span { color: var(--green-light); }
+  .hero-sub {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.4rem, 5vw, 3rem);
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+  }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .slide-title .accent { color: var(--green-light); }
+  .slide-body {
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+  .italic { font-style: italic; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-light), transparent);
+    margin: 1.2rem auto;
+  }
+
+  /* ── CARDS ── */
+  .cards {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: center; margin-top: 1.4rem;
+    max-width: 640px; position: relative; z-index: 2;
+  }
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(82,214,138,0.2);
+    border-radius: 16px;
+    padding: 1rem 1.3rem;
+    flex: 1 1 140px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s, background 0.3s;
+  }
+  .card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
+  .card-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+  .card-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green-pale);
+    margin-bottom: 0.2rem;
+  }
+  .card-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* ── WISH BUBBLE ── */
+  .wish-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(82,214,138,0.25);
+    border-radius: 24px;
+    padding: clamp(1.2rem,4vw,2rem) clamp(1.4rem,5vw,2.5rem);
+    max-width: 560px;
+    backdrop-filter: blur(8px);
+    position: relative; z-index: 2;
+    margin-top: 1rem;
+  }
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--green-light);
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+  }
+
+  /* ── AGE BADGE ── */
+  .age-badge {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 18vw, 11rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--green-light);
+    line-height: 1;
+    margin: 0.2rem 0;
+    text-shadow: 0 0 60px rgba(82,214,138,0.3);
+  }
+
+  /* ── EMOJIS FLOAT ── */
+  .floaters {
+    position: absolute; inset: 0;
+    pointer-events: none; overflow: hidden;
+    z-index: 0;
+  }
+  .floater {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0%   { opacity:0; transform: translateY(100%) rotate(0deg); }
+    10%  { opacity:0.7; }
+    90%  { opacity:0.7; }
+    100% { opacity:0; transform: translateY(-110vh) rotate(360deg); }
+  }
+
+  /* ── NAVIGATION DOTS ── */
+  .dots {
+    position: fixed;
+    right: clamp(12px, 3vw, 24px);
+    top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 10px;
+    z-index: 100;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(82,214,138,0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(82,214,138,0.5);
+  }
+  .dot.active {
+    background: var(--green-light);
+    transform: scale(1.5);
+    box-shadow: 0 0 8px rgba(82,214,138,0.6);
+  }
+
+  /* ── ARROW BUTTONS ── */
+  .arrow {
+    position: fixed;
+    bottom: clamp(20px, 4vh, 36px);
+    z-index: 100;
+    background: rgba(82,214,138,0.12);
+    border: 1px solid rgba(82,214,138,0.35);
+    color: var(--green-light);
+    border-radius: 50%;
+    width: clamp(42px, 8vw, 56px); height: clamp(42px, 8vw, 56px);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(6px);
+  }
+  .arrow:hover { background: rgba(82,214,138,0.3); transform: scale(1.1); }
+  .arrow.prev { left: 50%; transform: translateX(-70px); }
+  .arrow.next { left: 50%; transform: translateX(14px); }
+  .arrow.prev:hover { transform: translateX(-70px) scale(1.1); }
+  .arrow.next:hover { transform: translateX(14px) scale(1.1); }
+  .arrow:disabled { opacity: 0.2; pointer-events: none; }
+
+  /* ── SLIDE-IN ANIMATION ── */
+  .slide-content { position: relative; z-index: 2; }
+  .slide.active .animate-in {
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+  }
+  .slide.active .animate-in:nth-child(1) { animation-delay: 0.1s; }
+  .slide.active .animate-in:nth-child(2) { animation-delay: 0.2s; }
+  .slide.active .animate-in:nth-child(3) { animation-delay: 0.3s; }
+  .slide.active .animate-in:nth-child(4) { animation-delay: 0.4s; }
+  .slide.active .animate-in:nth-child(5) { animation-delay: 0.5s; }
+  .slide.active .animate-in:nth-child(6) { animation-delay: 0.6s; }
+  .animate-in { opacity: 0; transform: translateY(30px); }
+  @keyframes fadeUp {
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── CONFETTI strip on top ── */
+  .confetti-bar {
+    position: fixed; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--green-bright), var(--gold), var(--green-light), var(--gold), var(--green-bright));
+    background-size: 200% 100%;
+    animation: barMove 3s linear infinite;
+    z-index: 200;
+  }
+  @keyframes barMove { to { background-position: 200% 0; } }
+
+  /* ── CAKE ANIMATION slide 1 ── */
+  .cake-wrap { font-size: clamp(3.5rem, 10vw, 6rem); animation: bounce 2s ease-in-out infinite; }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  /* responsive tweaks */
+  @media (max-width: 480px) {
+    .cards { gap: 0.7rem; }
+    .card { flex: 1 1 120px; padding: 0.8rem 1rem; }
+    .wish-box { padding: 1rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="confetti-bar"></div>
+
+<!-- DOTS -->
+<nav class="dots" id="dots"></nav>
+
+<!-- ARROWS -->
+<button class="arrow prev" id="prevBtn" onclick="changeSlide(-1)">&#8592;</button>
+<button class="arrow next" id="nextBtn" onclick="changeSlide(1)">&#8594;</button>
+
+<!-- ═══════════════ SLIDER ═══════════════ -->
+<div class="slider" id="slider">
+
+  <!-- SLIDE 1 – OPENING -->
+  <div class="slide slide-1 active">
+    <div class="floaters" id="f1"></div>
+    <div class="slide-content">
+      <div class="cake-wrap animate-in">🎂</div>
+      <p class="tag animate-in">5th April 2008 · A Star is Born</p>
+      <h1 class="hero-name animate-in">Siva<br><span>Sankar</span></h1>
+      <p class="hero-sub animate-in">Happy Birthday! 🎉</p>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in">Today we celebrate the one and only <strong style="color:var(--green-light)">Siva Sankar</strong> — turning 18 and stepping into greatness!</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 – WHO HE IS -->
+  <div class="slide slide-2">
+    <div class="floaters" id="f2"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">The Man of the Day</p>
+      <h2 class="slide-title animate-in">Meet the <span class="accent">Legend</span></h2>
+      <div class="divider animate-in"></div>
+      <div class="cards animate-in">
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <div class="card-label">College</div>
+          <div class="card-value">SSNCOE</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-label">Branch</div>
+          <div class="card-value">B.E Mechanical</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🟢</div>
+          <div class="card-label">Fav Colour</div>
+          <div class="card-value">Green 💚</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎂</div>
+          <div class="card-label">Birthday</div>
+          <div class="card-value">5 April 2008</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 – AGE -->
+  <div class="slide slide-3">
+    <div class="floaters" id="f3"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Officially</p>
+      <div class="age-badge animate-in">18</div>
+      <h2 class="slide-title animate-in">Years of <span class="accent">Awesome</span></h2>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in">18 years of laughter, learning, and legends. The world wasn't ready — but here you are, and it's better for it. 🌿</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 – WISH -->
+  <div class="slide slide-4">
+    <div class="floaters" id="f4"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">From the Heart</p>
+      <h2 class="slide-title animate-in">Birthday <span class="accent">Wishes</span></h2>
+      <div class="wish-box animate-in">
+        <span class="quote-mark">"</span>
+        <p class="slide-body italic">Dear Siva Sankar, may this birthday mark the beginning of your most exciting chapter yet. May every gear you turn in Mechanical Engineering open doors of brilliance, every day bring you joy as vibrant as green, and may life always move in your favour. Wishing you a year full of success, good vibes, and unforgettable moments! 🌱✨</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 – QUALITIES -->
+  <div class="slide slide-5">
+    <div class="floaters" id="f5"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Why You're Special</p>
+      <h2 class="slide-title animate-in">Things We <span class="accent">Love</span> About You</h2>
+      <div class="divider animate-in"></div>
+      <div class="cards animate-in">
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <div class="card-value">Sharp Mind</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">😂</div>
+          <div class="card-value">Great Humor</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <div class="card-value">Loyal Friend</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💪</div>
+          <div class="card-value">Never Gives Up</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌿</div>
+          <div class="card-value">Green Energy</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-value">Future Engineer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 – FINAL -->
+  <div class="slide slide-6">
+    <div class="floaters" id="f6"></div>
+    <div class="slide-content">
+      <p class="tag animate-in">Always & Forever</p>
+      <h2 class="slide-title animate-in">Keep <span class="accent">Shining</span><br>Siva Sankar!</h2>
+      <div class="divider animate-in"></div>
+      <p class="slide-body animate-in" style="margin-bottom:1.5rem">The road ahead is long and full of wonders. Chase every dream, embrace every challenge, and never stop being you. 🚀</p>
+      <div class="wish-box animate-in" style="padding:1rem 1.5rem">
+        <p style="font-family:'Dancing Script',cursive;font-size:clamp(1.5rem,5vw,2.2rem);color:var(--gold)">Happy 18th Birthday! 🎉🥳🎂</p>
+        <p style="color:var(--green-pale);font-size:0.9rem;margin-top:0.4rem">With love, from your friends 💚</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end slider -->
+
+<script>
+/* ── STATE ── */
+let current = 0;
+const total = 6;
+const slider = document.getElementById('slider');
+const dotsNav = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const slides = document.querySelectorAll('.slide');
+
+/* ── DOTS ── */
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsNav.appendChild(d);
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === current));
+}
+
+function updateArrows() {
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === total - 1;
+}
+
+function resetAnimations(index) {
+  const els = slides[index].querySelectorAll('.animate-in');
+  els.forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+
+function goTo(index) {
+  slides[current].classList.remove('active');
+  current = index;
+  slider.style.transform = `translateX(-${current * 100}vw)`;
+  slides[current].classList.add('active');
+  resetAnimations(current);
+  updateDots();
+  updateArrows();
+}
+
+function changeSlide(dir) {
+  const next = current + dir;
+  if (next >= 0 && next < total) goTo(next);
+}
+
+updateArrows();
+
+/* ── TOUCH/SWIPE ── */
+let startX = 0;
+slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+slider.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - startX;
+  if (Math.abs(dx) > 50) changeSlide(dx < 0 ? 1 : -1);
+}, {passive:true});
+
+/* ── KEYBOARD ── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+});
+
+/* ── PARTICLES canvas ── */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.8 + 0.4;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.alpha = Math.random() * 0.5 + 0.1;
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(82,214,138,${this.alpha})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ── FLOATERS (emojis) ── */
+const sets = [
+  ['🎂','🎉','🎊','✨','💚','🌿'],
+  ['⚙️','🔧','💡','🎓','💚','✨'],
+  ['🎁','🥳','🎉','🌟','💚','🌱'],
+  ['💐','🥂','🎊','✨','🌿','💚'],
+  ['💪','🌟','🚀','💚','✨','🎉'],
+  ['🎂','🥳','💚','✨','🎉','🌿'],
+];
+
+sets.forEach((emojis, idx) => {
+  const container = document.getElementById('f'+(idx+1));
+  for (let i = 0; i < 10; i++) {
+    const el = document.createElement('span');
+    el.className = 'floater';
+    el.textContent = emojis[i % emojis.length];
+    el.style.left = (Math.random()*90+5) + '%';
+    el.style.animationDuration = (Math.random()*8+6) + 's';
+    el.style.animationDelay = (Math.random()*8) + 's';
+    el.style.fontSize = (Math.random()*1.2+0.9) + 'rem';
+    container.appendChild(el);
+  }
+});
+</script>
+</body>
+</html>
