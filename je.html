@@ -1,4 +1,3 @@
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -343,6 +342,91 @@
     transform: scale(1.05);
   }
 
+  /* ===== MUSIC PLAYER ===== */
+  .music-section {
+    max-width: 700px; margin: 30px auto; padding: 0 24px;
+  }
+  .music-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,0,0,0.4);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .music-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #c80000, #ff8800, #c80000);
+    animation: scanLine 2s linear infinite;
+  }
+  .music-badge {
+    display: inline-block;
+    border: 1px solid rgba(200,0,0,0.5);
+    color: #ff6644;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  .music-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(255,80,0,0.6);
+    margin-bottom: 4px;
+  }
+  .music-meta {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .music-meta span { color: #ff6644; }
+  .youtube-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(200,0,0,0.3);
+    box-shadow: 0 0 30px rgba(200,0,0,0.2);
+  }
+  .youtube-wrap iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border: none;
+  }
+  .music-note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: #555;
+    letter-spacing: 1px;
+  }
+  .note-bars {
+    display: flex; justify-content: center; align-items: flex-end;
+    gap: 4px; height: 24px; margin: 14px auto 0;
+  }
+  .note-bar {
+    width: 4px; background: #c80000; border-radius: 2px;
+    animation: noteDance 1s ease-in-out infinite alternate;
+  }
+  .note-bar:nth-child(1) { height: 8px;  animation-delay: 0s;    }
+  .note-bar:nth-child(2) { height: 16px; animation-delay: 0.1s;  }
+  .note-bar:nth-child(3) { height: 22px; animation-delay: 0.2s;  }
+  .note-bar:nth-child(4) { height: 14px; animation-delay: 0.3s;  }
+  .note-bar:nth-child(5) { height: 20px; animation-delay: 0.4s;  }
+  .note-bar:nth-child(6) { height: 10px; animation-delay: 0.5s;  }
+  .note-bar:nth-child(7) { height: 18px; animation-delay: 0.15s; }
+  @keyframes noteDance {
+    0%   { transform: scaleY(0.4); opacity: 0.5; }
+    100% { transform: scaleY(1.2); opacity: 1;   }
+  }
+
   /* AOT gear symbol SVG overlay */
   .gear-overlay {
     position: fixed; bottom: 20px; right: 20px;
@@ -583,6 +667,37 @@
       <div class="div-line"></div>
       <div class="div-icon" style="color:#3366ff">★</div>
       <div class="div-line" style="background: linear-gradient(90deg, transparent, #3366ff, transparent)"></div>
+    </div>
+
+    <!-- MUSIC PLAYER -->
+    <div class="music-section">
+      <div class="section-title">🎵 <span>BIRTHDAY</span> ANTHEM 🎵</div>
+      <div class="music-card">
+        <div class="music-badge">🎬 Karuppu · 2026</div>
+        <div class="music-title">VERAPPA</div>
+        <div class="music-meta">Sai Abhyankkar · Arivu · <span>Suriya</span></div>
+        <div class="youtube-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/lPXl1__XtFI?rel=0&modestbranding=1"
+            title="Verappa - Karuppu Tamil Song"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="note-bars">
+          <div class="note-bar"></div><div class="note-bar"></div>
+          <div class="note-bar"></div><div class="note-bar"></div>
+          <div class="note-bar"></div><div class="note-bar"></div>
+          <div class="note-bar"></div>
+        </div>
+        <div class="music-note">🔥 Blast this on your 18th, Jeeva! 🔥</div>
+      </div>
+    </div>
+
+    <div class="divider">
+      <div class="div-line"></div>
+      <div class="div-icon" style="color:#ff6644">♪</div>
+      <div class="div-line"></div>
     </div>
 
     <!-- SPECIAL MESSAGE -->
