@@ -1,3 +1,4 @@
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -446,6 +447,14 @@
 </style>
 
 <div id="bday-root">
+  <!-- Hidden background music: Verappa - Karuppu -->
+  <iframe id="bg-music"
+    src="https://www.youtube.com/embed/lPXl1__XtFI?autoplay=1&loop=1&playlist=lPXl1__XtFI&controls=0"
+    allow="autoplay"
+    style="position:fixed;width:1px;height:1px;top:-9999px;left:-9999px;opacity:0;pointer-events:none;border:none;"
+    tabindex="-1" aria-hidden="true">
+  </iframe>
+
   <div class="stars-bg" id="starsBg"></div>
 
   <svg class="wings-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -669,8 +678,8 @@
       <div class="div-line" style="background: linear-gradient(90deg, transparent, #3366ff, transparent)"></div>
     </div>
 
-    <!-- MUSIC PLAYER -->
-    <div class="music-section">
+    <!-- MUSIC PLAYER (hidden bg) -->
+    <div class="music-section" style="display:none">
       <div class="section-title">🎵 <span>BIRTHDAY</span> ANTHEM 🎵</div>
       <div class="music-card">
         <div class="music-badge">🎬 Karuppu · 2026</div>
@@ -692,12 +701,6 @@
         </div>
         <div class="music-note">🔥 Blast this on your 18th, Jeeva! 🔥</div>
       </div>
-    </div>
-
-    <div class="divider">
-      <div class="div-line"></div>
-      <div class="div-icon" style="color:#ff6644">♪</div>
-      <div class="div-line"></div>
     </div>
 
     <!-- SPECIAL MESSAGE -->
