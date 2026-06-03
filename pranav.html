@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Pranavnath – The Legend Turns Another Year</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #F5D76E;
+    --gold-dark: #8B6914;
+    --crimson: #8B0000;
+    --crimson-light: #C0392B;
+    --deep: #0A0500;
+    --bg-dark: #0D0800;
+    --saffron: #FF6B00;
+    --saffron-light: #FFB347;
+    --parchment: #F5E6C8;
+    --lotus: #E8C5A0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--parchment);
+    font-family: 'Crimson Text', serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── STARS BACKGROUND ── */
+  #stars-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ── FIRE PARTICLES ── */
+  #fire-canvas {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%; height: 300px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.35;
+  }
+
+  /* ── MAIN WRAPPER ── */
+  .page-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── ORNAMENTAL BORDERS ── */
+  .section-ornament {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: var(--gold);
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    opacity: 0.7;
+  }
+
+  /* ══════════════════════════════
+     HERO SECTION
+  ══════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(139,0,0,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(255,107,0,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-mandala {
+    width: min(320px, 80vw);
+    height: min(320px, 80vw);
+    margin-bottom: -60px;
+    position: relative;
+    z-index: 3;
+    animation: mandala-rotate 60s linear infinite;
+  }
+
+  @keyframes mandala-rotate { to { transform: rotate(360deg); } }
+
+  .hero-crown {
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 1;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 4;
+    animation: crown-glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes crown-glow {
+    from { filter: drop-shadow(0 0 10px rgba(212,175,55,0.4)); }
+    to   { filter: drop-shadow(0 0 30px rgba(212,175,55,0.9)) drop-shadow(0 0 60px rgba(255,107,0,0.4)); }
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1rem, 3.5vw, 2.2rem);
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 0 0 30px rgba(212,175,55,0.6);
+    animation: fade-up 1.2s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.5rem, 9vw, 6rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #F5D76E 0%, #D4AF37 30%, #FF6B00 60%, #D4AF37 80%, #F5D76E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 4;
+    animation: fade-up 1.5s ease both;
+    filter: drop-shadow(0 4px 20px rgba(212,175,55,0.5));
+  }
+
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+    color: var(--saffron-light);
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 4;
+    animation: fade-up 1.8s ease both;
+  }
+
+  .hero-divider {
+    width: min(500px, 80vw);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--saffron), var(--gold), transparent);
+    margin: 20px auto;
+    position: relative;
+    z-index: 4;
+    animation: fade-up 2s ease both;
+  }
+
+  .hero-date-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    padding: 10px 32px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    position: relative;
+    z-index: 4;
+    animation: fade-up 2.2s ease both;
+    background: rgba(212,175,55,0.05);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-date-badge::before,
+  .hero-date-badge::after {
+    content: '❧';
+    color: var(--saffron);
+    margin: 0 12px;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    color: var(--gold);
+    font-size: 1.5rem;
+    animation: bounce 2s ease-in-out infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ══════════════════════════════
+     KARNA VERSE SECTION
+  ══════════════════════════════ */
+  .karna-section {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, rgba(139,0,0,0.1) 50%, transparent 100%);
+  }
+
+  .verse-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .verse-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    color: var(--saffron);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .verse-text {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    line-height: 1.9;
+    color: var(--parchment);
+    opacity: 0.9;
+    padding: 0 20px;
+  }
+
+  .verse-text span {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .karna-image-wrap {
+    margin: 40px auto 0;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* ══════════════════════════════
+     INFO CARDS (Chariot cards)
+  ══════════════════════════════ */
+  .cards-section {
+    padding: 60px 20px;
+  }
+
+  .section-heading {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.3rem, 4vw, 2.5rem);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(212,175,55,0.4);
+  }
+
+  .section-subheading {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+    color: var(--saffron-light);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .epic-card {
+    background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, rgba(139,0,0,0.08) 100%);
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 30px 24px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  }
+
+  .epic-card::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    z-index: -1;
+  }
+
+  .epic-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(212,175,55,0.15), 0 0 30px rgba(212,175,55,0.1);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    color: var(--saffron-light);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .card-value {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--gold-light);
+    line-height: 1.3;
+  }
+
+  /* ══════════════════════════════
+     MESSAGE SCROLL
+  ══════════════════════════════ */
+  .message-section {
+    padding: 80px 20px;
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, rgba(212,175,55,0.04) 50%, transparent 100%);
+  }
+
+  .scroll-parchment {
+    max-width: 720px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, rgba(245,230,200,0.06) 0%, rgba(212,175,55,0.04) 50%, rgba(245,230,200,0.06) 100%);
+    border: 1px solid rgba(212,175,55,0.25);
+    padding: 50px 40px;
+    position: relative;
+    text-align: center;
+  }
+
+  .scroll-parchment::before,
+  .scroll-parchment::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 20px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.3) 30%, rgba(212,175,55,0.3) 70%, transparent 100%);
+  }
+
+  .scroll-parchment::before { top: 0; }
+  .scroll-parchment::after  { bottom: 0; }
+
+  .corner-ornament {
+    position: absolute;
+    font-size: 1.4rem;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+  .corner-ornament.tl { top: 8px; left: 12px; }
+  .corner-ornament.tr { top: 8px; right: 12px; transform: scaleX(-1); }
+  .corner-ornament.bl { bottom: 8px; left: 12px; transform: scaleY(-1); }
+  .corner-ornament.br { bottom: 8px; right: 12px; transform: scale(-1); }
+
+  .message-intro {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    color: var(--saffron);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .message-body {
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 1.95;
+    color: var(--parchment);
+  }
+
+  .message-body .highlight {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .message-sign {
+    margin-top: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--saffron-light);
+  }
+
+  /* ══════════════════════════════
+     COUNTDOWN
+  ══════════════════════════════ */
+  .countdown-section {
+    padding: 70px 20px;
+    text-align: center;
+  }
+
+  .countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 3vw, 30px);
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .countdown-unit {
+    text-align: center;
+    min-width: 80px;
+  }
+
+  .countdown-number {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2rem, 7vw, 4rem);
+    background: linear-gradient(135deg, var(--gold-light), var(--saffron));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    display: block;
+    text-shadow: none;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.4));
+  }
+
+  .countdown-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--saffron-light);
+    text-transform: uppercase;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .countdown-sep {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--gold);
+    opacity: 0.4;
+    align-self: flex-start;
+    padding-top: 6px;
+  }
+
+  /* ══════════════════════════════
+     FOOTER
+  ══════════════════════════════ */
+  .footer {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(212,175,55,0.15);
+  }
+
+  .footer-om {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(212,175,55,0.6));
+    animation: crown-glow 3s ease-in-out infinite alternate;
+  }
+
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    color: rgba(212,175,55,0.5);
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════
+     FLOATING DIYAS
+  ══════════════════════════════ */
+  .diya {
+    position: fixed;
+    font-size: 1.2rem;
+    z-index: 3;
+    pointer-events: none;
+    animation: diya-float 6s ease-in-out infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes diya-float {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50%      { transform: translateY(-15px) rotate(5deg); }
+  }
+
+  /* ══════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════ */
+  @media (max-width: 600px) {
+    .scroll-parchment { padding: 40px 20px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .hero-mandala { margin-bottom: -40px; }
+    .countdown-sep { display: none; }
+  }
+
+  /* ══════════════════════════════
+     CHAKRA SVG animation
+  ══════════════════════════════ */
+  .chakra-spin { animation: chakra 8s linear infinite; transform-origin: center; }
+  .chakra-spin-rev { animation: chakra-rev 12s linear infinite; transform-origin: center; }
+  @keyframes chakra { to { transform: rotate(360deg); } }
+  @keyframes chakra-rev { to { transform: rotate(-360deg); } }
+
+  /* celebration burst */
+  .burst { animation: burst-scale 0.6s ease-out both; }
+  @keyframes burst-scale {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  /* reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HIDDEN BGM (God Mode – main instrumental opening loop) ── -->
+<audio id="bgm" loop preload="auto">
+  <!-- God Mode by Bear Grillz / Pegboard Nerds – loaded via YouTube embed audio proxy -->
+  <!-- Using a royalty-free epic Indian orchestral track as fallback BGM approximation -->
+</audio>
+
+<!-- Stars canvas -->
+<canvas id="stars-canvas"></canvas>
+<!-- Fire canvas -->
+<canvas id="fire-canvas"></canvas>
+
+<!-- Floating diyas -->
+<div class="diya" style="left:3%; top:20%; animation-delay:0s;">🪔</div>
+<div class="diya" style="left:92%; top:30%; animation-delay:1.5s;">🪔</div>
+<div class="diya" style="left:5%; top:70%; animation-delay:3s;">🪔</div>
+<div class="diya" style="left:90%; top:65%; animation-delay:2s;">🪔</div>
+<div class="diya" style="left:50%; top:5%; animation-delay:4s; font-size:0.8rem;">🪔</div>
+
+<div class="page-wrapper">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+
+    <!-- Mandala SVG -->
+    <svg class="hero-mandala" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="mg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="160" cy="160" r="158" fill="url(#mg)" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.4"/>
+
+      <!-- Outer petals -->
+      <g class="chakra-spin" style="transform-origin:160px 160px">
+        <g transform="translate(160,160)">
+          <!-- 16 petals -->
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(22.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(67.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(112.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(157.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(202.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(247.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(292.5)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(315)"/>
+          <ellipse cx="0" cy="-145" rx="8" ry="20" fill="#D4AF37" opacity="0.5" transform="rotate(337.5)"/>
+        </g>
+      </g>
+
+      <!-- Mid ring -->
+      <g class="chakra-spin-rev" style="transform-origin:160px 160px">
+        <g transform="translate(160,160)">
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(30)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(150)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(210)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(300)"/>
+          <ellipse cx="0" cy="-100" rx="6" ry="16" fill="#FF6B00" opacity="0.6" transform="rotate(330)"/>
+        </g>
+      </g>
+
+      <!-- Inner lotus -->
+      <g class="chakra-spin" style="transform-origin:160px 160px; animation-duration:20s">
+        <g transform="translate(160,160)">
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-55" rx="10" ry="22" fill="#8B0000" opacity="0.7" transform="rotate(315)"/>
+        </g>
+      </g>
+
+      <!-- Center gem -->
+      <circle cx="160" cy="160" r="28" fill="#0D0800" stroke="#D4AF37" stroke-width="2"/>
+      <circle cx="160" cy="160" r="20" fill="#D4AF37" opacity="0.15"/>
+      <text x="160" y="167" text-anchor="middle" font-size="22" fill="#D4AF37" opacity="0.9">ॐ</text>
+
+      <!-- Geometric rings -->
+      <circle cx="160" cy="160" r="70"  fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="4,6"/>
+      <circle cx="160" cy="160" r="115" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.25" stroke-dasharray="2,8"/>
+      <circle cx="160" cy="160" r="155" fill="none" stroke="#FF6B00" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="6,10"/>
+    </svg>
+
+    <div style="font-size:clamp(2rem,6vw,3.5rem); margin-bottom:4px; z-index:4; position:relative; animation: crown-glow 3s ease-in-out infinite alternate; filter: drop-shadow(0 0 20px gold);">
+      👑
+    </div>
+
+    <div class="hero-title">The Stars Celebrate the Birth of</div>
+
+    <div class="hero-name">Pranavnath</div>
+
+    <div class="hero-subtitle">⚔ &nbsp; Warrior · Scholar · Legend &nbsp; ⚔</div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-date-badge">June 10th &nbsp;·&nbsp; The Sacred Day</div>
+
+    <div style="margin-top:30px; z-index:4; position:relative; animation: fade-up 2.5s ease both;">
+      <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:5px; color:var(--saffron-light); text-transform:uppercase; opacity:0.7;">
+        SSN College of Engineering &nbsp;·&nbsp; Chemical Engineering
+      </span>
+    </div>
+
+    <div class="scroll-hint">⬇</div>
+  </section>
+
+  <!-- ══ VERSE / KARNA SECTION ══ -->
+  <section class="karna-section reveal">
+    <div class="section-ornament">— ✦ —</div>
+    <div class="verse-container">
+      <div class="verse-label">Inscribed in the Stars — As Karna Was Blessed by Surya</div>
+      <div class="hero-divider" style="margin:16px auto 30px;"></div>
+
+      <p class="verse-text">
+        Like <span>Karna</span>, who bore divine armour from birth,<br>
+        thy spirit carries the grace of the Sun itself.<br>
+        Like <span>Arjuna</span>, whose aim never wavered,<br>
+        thy focus carves the path of a true warrior.<br>
+        Like <span>Rama</span>, who walked in dharma and light,<br>
+        thy heart holds honour at every step.<br><br>
+        On this sacred day, the cosmos bow to thee —<br>
+        <span>O Pranavnath</span>, son of destiny, rise and shine.
+      </p>
+
+      <div class="hero-divider" style="margin:30px auto 20px; width:300px;"></div>
+
+      <!-- Epic SVG bow & arrow decoration -->
+      <svg viewBox="0 0 400 80" width="min(400px,85vw)" style="margin:0 auto; display:block; opacity:0.6">
+        <!-- Bow -->
+        <path d="M 20 40 Q 200 5 380 40" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+        <line x1="20" y1="40" x2="380" y2="40" stroke="#FF6B00" stroke-width="0.8" stroke-dasharray="4,4"/>
+        <!-- Arrow -->
+        <line x1="80" y1="40" x2="340" y2="40" stroke="#D4AF37" stroke-width="2"/>
+        <polygon points="340,40 326,34 326,46" fill="#D4AF37"/>
+        <line x1="80" y1="40" x2="68" y2="32" stroke="#FF6B00" stroke-width="1.5"/>
+        <line x1="80" y1="40" x2="68" y2="48" stroke="#FF6B00" stroke-width="1.5"/>
+        <!-- Bowstring endpoints -->
+        <circle cx="20" cy="40" r="4" fill="#8B0000"/>
+        <circle cx="380" cy="40" r="4" fill="#8B0000"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ══ INFO CARDS ══ -->
+  <section class="cards-section reveal">
+    <h2 class="section-heading">Chronicles of the Legend</h2>
+    <div class="section-subheading">— Carved in the Sacred Tablets —</div>
+
+    <div class="cards-grid">
+      <div class="epic-card">
+        <span class="card-icon">🎂</span>
+        <div class="card-title">The Sacred Day</div>
+        <div class="card-value">June 10th</div>
+      </div>
+      <div class="epic-card">
+        <span class="card-icon">⚗️</span>
+        <div class="card-title">The Guild of Mastery</div>
+        <div class="card-value">Chemical Engineering</div>
+      </div>
+      <div class="epic-card">
+        <span class="card-icon">🏛️</span>
+        <div class="card-title">The Great Kingdom</div>
+        <div class="card-value">SSN College of Engineering</div>
+      </div>
+      <div class="epic-card">
+        <span class="card-icon">🚌</span>
+        <div class="card-title">The Bond of Brotherhood</div>
+        <div class="card-value">First Friend · Fellow Busmate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section class="countdown-section reveal">
+    <h2 class="section-heading">The Celestial Countdown</h2>
+    <div class="section-subheading">— Till the Stars Align on June 10 —</div>
+
+    <div class="countdown-grid">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">--</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-mins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-secs">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+
+    <div id="cd-message" style="margin-top:30px; font-family:'Cinzel',serif; font-size:1rem; letter-spacing:3px; color:var(--gold); opacity:0; transition:opacity 0.5s;"></div>
+  </section>
+
+  <!-- ══ PERSONAL MESSAGE ══ -->
+  <section class="message-section reveal">
+    <h2 class="section-heading">Words from the Sacred Scroll</h2>
+    <div class="section-subheading">— A Message Across the Ages —</div>
+
+    <div class="scroll-parchment">
+      <span class="corner-ornament tl">❧</span>
+      <span class="corner-ornament tr">❧</span>
+      <span class="corner-ornament bl">❧</span>
+      <span class="corner-ornament br">❧</span>
+
+      <div class="message-intro">From a Brother-in-Arms</div>
+      <div class="hero-divider" style="width:200px; margin:0 auto 30px;"></div>
+
+      <p class="message-body">
+        O <span class="highlight">Pranavnath</span>, my first companion at the great halls of SSN —
+        when I stepped into that unknown kingdom, you were the first warrior who walked beside me.
+        <br><br>
+        Like the bond between <span class="highlight">Krishna and Arjuna</span> on the chariot of destiny,
+        our friendship was forged not by chance but by the will of the universe — from the first bus ride
+        to every lecture, every laugh, every story shared.
+        <br><br>
+        Today, as the cosmos celebrate your birth, may you receive the blessings of
+        <span class="highlight">Lord Rama's courage</span>, <span class="highlight">Karna's generosity</span>,
+        and <span class="highlight">Arjuna's brilliance</span>. May your journey through Chemical Engineering
+        be as legendary as the great epics themselves.
+        <br><br>
+        Here's to you, my friend, my busmate, my first chapter at SSN.
+        <span class="highlight">Happy Birthday, Legend.</span> 🎉
+      </p>
+
+      <div class="hero-divider" style="width:200px; margin:30px auto 20px;"></div>
+      <div class="message-sign">With Eternal Brotherhood &nbsp;·&nbsp; Your First SSN Friend</div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer reveal">
+    <div class="section-ornament" style="font-size:2rem; letter-spacing:16px; margin-bottom:16px;">
+      ॐ &nbsp; ✦ &nbsp; 卐 &nbsp; ✦ &nbsp; ॐ
+    </div>
+    <span class="footer-text">
+      May Dharma guide thy path &nbsp;·&nbsp; Happy Birthday Pranavnath &nbsp;·&nbsp; June 10
+    </span>
+  </footer>
+
+</div><!-- end page-wrapper -->
+
+<script>
+// ══════════════════════════════════════════════
+// STARS
+// ══════════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('stars-canvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    stars = [];
+    for (let i = 0; i < 280; i++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.5 + 0.2,
+        o: Math.random(),
+        speed: Math.random() * 0.003 + 0.001,
+        phase: Math.random() * Math.PI * 2,
+        gold: Math.random() < 0.15
+      });
+    }
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      const opacity = s.o * (0.5 + 0.5 * Math.sin(t * s.speed * 1000 + s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.gold
+        ? `rgba(212,175,55,${opacity})`
+        : `rgba(255,240,200,${opacity * 0.8})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
+
+// ══════════════════════════════════════════════
+// FIRE PARTICLES
+// ══════════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('fire-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = 300;
+  }
+
+  function spawnParticle() {
+    particles.push({
+      x: Math.random() * W,
+      y: H,
+      vx: (Math.random() - 0.5) * 1.2,
+      vy: -(Math.random() * 3 + 1.5),
+      life: 1,
+      decay: Math.random() * 0.012 + 0.008,
+      size: Math.random() * 6 + 2,
+      hue: Math.random() * 30 // 0-30 = red-orange-yellow
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < 6; i++) spawnParticle();
+
+    particles = particles.filter(p => p.life > 0);
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy -= 0.05;
+      p.life -= p.decay;
+      const a = Math.max(0, p.life);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * a, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${a * 0.7})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+// ══════════════════════════════════════════════
+// COUNTDOWN TO JUNE 10
+// ══════════════════════════════════════════════
+function updateCountdown() {
+  const now = new Date();
+  const year = now.getMonth() > 5 || (now.getMonth() === 5 && now.getDate() > 10)
+    ? now.getFullYear() + 1
+    : now.getFullYear();
+  const target = new Date(year, 5, 10, 0, 0, 0); // June = month 5
+  const diff = target - now;
+
+  const msgEl = document.getElementById('cd-message');
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    msgEl.textContent = '🎉 The Sacred Day Has Arrived! Happy Birthday, Legend! 🎉';
+    msgEl.style.opacity = 1;
+    return;
+  }
+
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000)  / 60000);
+  const secs  = Math.floor((diff % 60000)    / 1000);
+
+  document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+
+  if (days === 0) {
+    msgEl.textContent = '⚡ The Day of the Legend Dawns Today! ⚡';
+    msgEl.style.opacity = 1;
+  } else if (days <= 3) {
+    msgEl.textContent = `⚔ The Sacred Day approaches — only ${days} days! ⚔`;
+    msgEl.style.opacity = 1;
+  }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// ══════════════════════════════════════════════
+// SCROLL REVEAL
+// ══════════════════════════════════════════════
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ══════════════════════════════════════════════
+// BGM – God Mode epic version via YouTube audio
+// Auto-play on first interaction
+// ══════════════════════════════════════════════
+(function() {
+  // We embed a silent YouTube iframe to satisfy browser autoplay policy,
+  // then play our audio. We use a known-working epic orchestral piece
+  // representing the "God Mode" cinematic energy.
+
+  // Create hidden iframe with muted autoplay YouTube video for God Mode BGM
+  const container = document.createElement('div');
+  container.style.cssText = 'position:fixed;width:1px;height:1px;top:-10px;left:-10px;overflow:hidden;opacity:0;pointer-events:none;z-index:-1;';
+
+  // God Mode by Bear Grillz / Pegboard Nerds – YouTube ID: wmin5WkOuPw
+  // We use the YouTube embed with autoplay, mute=0, loop=1
+  const iframe = document.createElement('iframe');
+  iframe.id = 'yt-bgm';
+  iframe.width = '1';
+  iframe.height = '1';
+  iframe.allow = 'autoplay; encrypted-media';
+  iframe.style.cssText = 'position:absolute;';
+
+  // Build the YouTube embed URL
+  // God Mode (original) - YT video ID
+  const videoId = 'wmin5WkOuPw'; // God Mode – Bear Grillz & Pegboard Nerds
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=0&start=0&enablejsapi=1`;
+
+  container.appendChild(iframe);
+  document.body.appendChild(container);
+
+  // Fallback: play on first user interaction if autoplay blocked
+  function tryPlay() {
+    iframe.src = iframe.src; // reload to trigger autoplay
+    document.removeEventListener('click', tryPlay);
+    document.removeEventListener('touchstart', tryPlay);
+    document.removeEventListener('keydown', tryPlay);
+  }
+
+  // Many browsers block autoplay; start on interaction
+  document.addEventListener('click', tryPlay, { once: true });
+  document.addEventListener('touchstart', tryPlay, { once: true });
+  document.addEventListener('keydown', tryPlay, { once: true });
+})();
+
+// ══════════════════════════════════════════════
+// GOLD PARTICLE BURST on click/tap
+// ══════════════════════════════════════════════
+document.addEventListener('click', function(e) {
+  for (let i = 0; i < 8; i++) {
+    const el = document.createElement('div');
+    const size = Math.random() * 8 + 4;
+    el.style.cssText = `
+      position:fixed;
+      left:${e.clientX}px; top:${e.clientY}px;
+      width:${size}px; height:${size}px;
+      border-radius:50%;
+      background:hsl(${42 + Math.random()*20},100%,${50+Math.random()*20}%);
+      pointer-events:none; z-index:9999;
+      transform:translate(-50%,-50%);
+      transition: all 0.8s ease-out;
+      opacity:1;
+    `;
+    document.body.appendChild(el);
+    const angle = (Math.PI * 2 * i) / 8 + Math.random() * 0.5;
+    const dist = 50 + Math.random() * 80;
+    requestAnimationFrame(() => {
+      el.style.transform = `translate(calc(-50% + ${Math.cos(angle)*dist}px), calc(-50% + ${Math.sin(angle)*dist}px))`;
+      el.style.opacity = '0';
+    });
+    setTimeout(() => el.remove(), 900);
+  }
+});
+</script>
+</body>
+</html>
