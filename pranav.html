@@ -969,20 +969,18 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ══════════════════════════════════════════════
-// BGM – God Mode epic version via YouTube audio
-// Auto-play on first interaction
+// BGM – God Mode Tamil Song (Rangalam Adukalama)
+// YouTube: nffLXODytdw  |  starts at 58s (main part)
 // ══════════════════════════════════════════════
 (function() {
-  // We embed a silent YouTube iframe to satisfy browser autoplay policy,
-  // then play our audio. We use a known-working epic orchestral piece
-  // representing the "God Mode" cinematic energy.
+  const videoId = 'nffLXODytdw';
+  const startTime = 58; // Rangalam Adukalama main part
 
-  // Create hidden iframe with muted autoplay YouTube video for God Mode BGM
+  // Hidden iframe container
   const container = document.createElement('div');
+  container.id = 'yt-bgm-container';
   container.style.cssText = 'position:fixed;width:1px;height:1px;top:-10px;left:-10px;overflow:hidden;opacity:0;pointer-events:none;z-index:-1;';
 
-  // God Mode by Bear Grillz / Pegboard Nerds – YouTube ID: wmin5WkOuPw
-  // We use the YouTube embed with autoplay, mute=0, loop=1
   const iframe = document.createElement('iframe');
   iframe.id = 'yt-bgm';
   iframe.width = '1';
@@ -990,26 +988,81 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   iframe.allow = 'autoplay; encrypted-media';
   iframe.style.cssText = 'position:absolute;';
 
-  // Build the YouTube embed URL
-  // God Mode (original) - YT video ID
-  const videoId = 'wmin5WkOuPw'; // God Mode – Bear Grillz & Pegboard Nerds
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=0&start=0&enablejsapi=1`;
+  function buildSrc(autoplay) {
+    return `https://www.youtube.com/embed/${videoId}?autoplay=${autoplay}&loop=1&playlist=${videoId}&controls=0&mute=0&start=${startTime}&enablejsapi=1`;
+  }
 
+  // Start paused; will activate on first interaction
+  iframe.src = buildSrc(0);
   container.appendChild(iframe);
   document.body.appendChild(container);
 
-  // Fallback: play on first user interaction if autoplay blocked
-  function tryPlay() {
-    iframe.src = iframe.src; // reload to trigger autoplay
-    document.removeEventListener('click', tryPlay);
-    document.removeEventListener('touchstart', tryPlay);
-    document.removeEventListener('keydown', tryPlay);
+  // Music toggle button
+  const btn = document.createElement('div');
+  btn.id = 'music-btn';
+  let playing = false;
+  btn.innerHTML = '🎵';
+  btn.title = 'Play God Mode BGM';
+  btn.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(139,0,0,0.35));
+    border: 1.5px solid rgba(212,175,55,0.6);
+    color: #F5D76E;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 18px rgba(212,175,55,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+  `;
+
+  btn.addEventListener('mouseenter', () => {
+    btn.style.transform = 'scale(1.12)';
+    btn.style.boxShadow = '0 0 28px rgba(212,175,55,0.5)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'scale(1)';
+    btn.style.boxShadow = '0 0 18px rgba(212,175,55,0.25)';
+  });
+
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    playing = !playing;
+    iframe.src = buildSrc(playing ? 1 : 0);
+    btn.innerHTML = playing ? '🔊' : '🎵';
+    btn.title = playing ? 'Pause BGM' : 'Play God Mode BGM';
+  });
+
+  document.body.appendChild(btn);
+
+  // Auto-start on first page interaction
+  let started = false;
+  function autoStart() {
+    if (started) return;
+    started = true;
+    playing = true;
+    iframe.src = buildSrc(1);
+    btn.innerHTML = '🔊';
+    btn.title = 'Pause BGM';
+    document.removeEventListener('click', autoStart);
+    document.removeEventListener('touchstart', autoStart);
+    document.removeEventListener('keydown', autoStart);
+    document.removeEventListener('scroll', autoStart);
   }
 
-  // Many browsers block autoplay; start on interaction
-  document.addEventListener('click', tryPlay, { once: true });
-  document.addEventListener('touchstart', tryPlay, { once: true });
-  document.addEventListener('keydown', tryPlay, { once: true });
+  document.addEventListener('click', autoStart, { once: true });
+  document.addEventListener('touchstart', autoStart, { once: true });
+  document.addEventListener('keydown', autoStart, { once: true });
+  document.addEventListener('scroll', autoStart, { once: true });
 })();
 
 // ══════════════════════════════════════════════
